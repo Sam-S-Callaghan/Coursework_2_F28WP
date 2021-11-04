@@ -1,5 +1,6 @@
 function start() {
   //create bear
+  document.getElementById("GO").style.visibility = "hidden";
   bear = new Bear();
   // Add an event listener to the keypress event.
   document.addEventListener("keydown", moveBear, false);
@@ -193,6 +194,7 @@ function updateBees() {
   //move the bees randomly
   if (hits.innerHTML >= 1000) {
     clearTimeout();
+    document.getElementById("GO").style.visibility = "visible";
     return;
   }
   moveBees();
