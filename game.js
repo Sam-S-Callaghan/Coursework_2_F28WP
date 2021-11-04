@@ -15,6 +15,17 @@ function start() {
   document.addEventListener("keydown", (lastStingTime = new Date()));
 }
 
+function restart() {
+  clearTimeout();
+  document.getElementById("duration").innerHTML = "0";
+  hits.innerHTML = 0;
+  for (let i = 0; i < bees.length; i++) {
+    bees[i].htmlElement.parentNode.removeChild(bees[i].htmlElement);
+  }
+  bees = [];
+  start();
+}
+
 function Bear() {
   this.dBear = 100;
   this.htmlElement = document.getElementById("bear");
